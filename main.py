@@ -83,7 +83,7 @@ def get():
     page = Titled("EasyStocks", style="display: none;"), Div(
         header(),
         Div(
-            H1('Slogan', style="margin-bottom: 65px;"),
+            H1('Um jeito simples e fácil de escolher ações', style="margin-bottom: 65px;"),
             P('Não precisa ser um expert para tomar decisões informadas em seus investimentos.', cls='purpose'),
             P('Compare ações de diferentes empresas com dados em tempo real.', cls='purpose'),
             Button('Escolha Sua Ação', onclick="window.location.href='/escolha'", style="margin-top: 50px;"),
@@ -185,7 +185,7 @@ def displayTable(dict):
                 for row in dict
             ]
         ), 
-        style="width: auto; heigth: 75%;",
+        style="width: 100% !important; height: 75%;",
         cls='striped'
     )
     return table
@@ -217,7 +217,7 @@ def displayFilterTable(dict):
                 for row in dict
             ]
         ), 
-        style="width: auto; heigth: 75%;",
+        style="width: 75%; heigth: 75%;",
         cls='striped'
     )
     return table
@@ -327,7 +327,7 @@ def post(setor: str = Form(...),
                 H4(setor, style="font-weight: normal; margin:0;"), 
                 Button('Limpar', onclick="window.location.href='/escolha'", style="margin: 0 20px;", cls='outline'),
                 cls='textDiv'),
-            table,
+            Div (table, cls='tableDiv'),
             cls='forms'),
         Style (
             """
